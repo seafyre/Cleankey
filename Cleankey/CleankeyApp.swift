@@ -99,7 +99,7 @@ struct CleankeyApp: App {
                 Divider()
                 
                 HStack {
-                    Text("v1.0")
+                    Text("v1.1")
                         .font(.body)
 
                     Spacer()
@@ -149,13 +149,18 @@ final class KeyboardBlocker: ObservableObject {
         // Ensure we have accessibility trust; the system may disable the tap otherwise.
         requestAccessibilityPermissionIfNeeded()
 
-        // Build an event mask for key down, key up, and modifier changes.
+        // Build an event mask for key down, key up, modifier changes,
+        // and NX_SYSDEFINED (system-defined) events which carry media keys
+        // (play/pause, brightness, volume, etc.).
+        let nxSysDefined: UInt64 = 14 // NX_SYSDEFINED / NSEvent.EventType.systemDefined
         let mask = (
             (1 as UInt64) << CGEventType.keyDown.rawValue
         ) | (
             (1 as UInt64) << CGEventType.keyUp.rawValue
         ) | (
             (1 as UInt64) << CGEventType.flagsChanged.rawValue
+        ) | (
+            (1 as UInt64) << nxSysDefined
         )
 
         // Create the event tap at the HID level so we can suppress events system-wide.
@@ -222,6 +227,16 @@ final class KeyboardBlocker: ObservableObject {
         if let refcon = refcon {
             let me = Unmanaged<KeyboardBlocker>.fromOpaque(refcon).takeUnretainedValue()
             if me.isBlocking {
+                // For NX_SYSDEFINED events, only block media/special key events
+                // (subtype 8 = NX_SUBTYPE_AUX_CONTROL_BUTTONS), let others pass.
+                let nxSysDefined: UInt32 = 14
+                if type.rawValue == nxSysDefined {
+                    let nsEvent = NSEvent(cgEvent: event)
+                    if nsEvent?.subtype.rawValue == 8 {
+                        return nil // Drop media key event
+                    }
+                    return Unmanaged.passUnretained(event)
+                }
                 return nil // Drop the event
             } else {
                 return Unmanaged.passUnretained(event)
