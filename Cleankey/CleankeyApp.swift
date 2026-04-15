@@ -56,12 +56,13 @@ struct CleankeyApp: App {
                 HStack(spacing: 12) {
                     Text("Keyboard Cleaning")
                         .font(.body)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    Spacer()
 
                     Toggle("", isOn: $blocker.isBlocking)
                         .labelsHidden()
                         .toggleStyle(.switch)
-                        .controlSize(.small)
+                        .fixedSize()
                 }
                 .padding(.vertical, 6)
                 .padding(.horizontal, 6)
@@ -69,37 +70,29 @@ struct CleankeyApp: App {
                 Divider()
 
                 VStack(spacing: 4) {
-                    Button(action: { SystemSettingsOpener.open(.inputMonitoring) }) {
-                        HStack {
-                            Text("Input Monitoring Settings…")
-                            Spacer(minLength: 0)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal, 6)
-                        .contentShape(RoundedRectangle(cornerRadius: 8))
-                        .hoverRow()
+                    Button("Input Monitoring Settings…") {
+                        SystemSettingsOpener.open(.inputMonitoring)
                     }
                     .buttonStyle(.plain)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 6)
+                    .hoverRow()
 
-                    Button(action: { SystemSettingsOpener.open(.accessibility) }) {
-                        HStack {
-                            Text("Accessibility Settings…")
-                            Spacer(minLength: 0)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal, 6)
-                        .contentShape(RoundedRectangle(cornerRadius: 8))
-                        .hoverRow()
+                    Button("Accessibility Settings…") {
+                        SystemSettingsOpener.open(.accessibility)
                     }
                     .buttonStyle(.plain)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 6)
+                    .hoverRow()
                 }
                 
                 Divider()
                 
                 HStack {
-                    Text("v1.1")
+                    Text("v1.2")
                         .font(.body)
 
                     Spacer()
