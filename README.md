@@ -32,3 +32,7 @@ Both can be granted in System Settings. Cleankey includes shortcuts to jump stra
 ## Installation
 
 Build the project in Xcode and drop `Cleankey.app` into your `/Applications` folder. Cleankey lives entirely in the menu bar — no Dock icon, no app switcher entry.
+
+---
+
+Made by [Nick Ringelmann](https://nickringelmann.com)
