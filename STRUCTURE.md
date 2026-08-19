@@ -9,7 +9,7 @@ Last updated: 2026-08-18
 - **Platform:** macOS 13.0+ (Ventura and later)
 - **Language:** Swift 5.0
 - **UI Framework:** SwiftUI
-- **Version:** 1.1 (`MARKETING_VERSION`), build 2 (`CURRENT_PROJECT_VERSION`)
+- **Version:** 1.1.1 (`MARKETING_VERSION`), build 3 (`CURRENT_PROJECT_VERSION`)
 
 ---
 
