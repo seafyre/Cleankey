@@ -25,13 +25,15 @@ Two options:
 1. Download the .zip archive from the "Releases" section here and drop `Cleankey.app` into `/Applications` (or wherever you want).
 2. Download the whole repository, build the project in Xcode and drop `Cleankey.app` into your `/Applications` folder.
 
-### How do I unlock my keyboard again?
+### FAQ
+
+#### How do I unlock my keyboard again?
 Click the Cleankey icon in the menu bar and flip the toggle off. Your mouse and trackpad keep working the whole time it is locked, so you always have a way back.
 
-### Does Cleankey record what I type?
+#### Does Cleankey record what I type?
 No. Cleankey throws key events away while the lock is on. It never reads them, saves them or sends them anywhere, and it does nothing at all while the lock is off.
 
-### The toggle cannot be toggled. What is wrong?
+#### The toggle cannot be toggled. What is wrong?
 You did not grant both permissions yet, so Cleankey cannot activate it's keyboard lock. The menu tells you which one is missing. Grant it, then quit Cleankey and open it again, because macOS applies new permissions only on a fresh launch.
 
 Made by [Nick Ringelmann](https://nickringelmann.com)
