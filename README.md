@@ -31,7 +31,7 @@ Click the Cleankey icon in the menu bar and flip the toggle off. Your mouse and 
 ### Does Cleankey record what I type?
 No. Cleankey throws key events away while the lock is on. It never reads them, saves them or sends them anywhere, and it does nothing at all while the lock is off.
 
-### The toggle keeps switching itself back off. What is wrong?
-macOS has not granted both permissions yet, so Cleankey cannot install its keyboard lock. The menu tells you which one is missing. Grant it, then quit Cleankey and open it again, because macOS applies new permissions only to a fresh launch.
+### The toggle cannot be toggled. What is wrong?
+You did not grant both permissions yet, so Cleankey cannot activate it's keyboard lock. The menu tells you which one is missing. Grant it, then quit Cleankey and open it again, because macOS applies new permissions only on a fresh launch.
 
 Made by [Nick Ringelmann](https://nickringelmann.com)
