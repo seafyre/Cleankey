@@ -125,7 +125,7 @@ File-level constants: `appVersion` reads `CFBundleShortVersionString` from the b
 
 ### 5. `UpdateChecker` (ObservableObject)
 - **Purpose:** Compares the running version against the latest GitHub release
-- **Endpoint:** `https://api.github.com/repos/seafyre/Cleankey/releases/latest`, reading `tag_name` and stripping a leading `v` (release tags are `v1.2.1` style)
+- **Endpoint:** `https://api.github.com/repos/kcin1107/Cleankey/releases/latest`, reading `tag_name` and stripping a leading `v` (release tags are `v1.1` style). The owner is hardcoded, so it has to be changed here if the repository moves again. GitHub's redirect from a former name lasts only while nobody claims it.
 - **Comparison:** `compare(_:options: .numeric)` so 1.10 sorts above 1.9
 - **State machine:** `.idle` / `.checking` / `.upToDate` / `.available(String)` / `.failed`. The row's label *is* the state, so there is no separate status line. Checking and up-to-date use the secondary label color so they read as status text; `act()` downloads when an update is waiting and re-checks otherwise, so the up-to-date and failed states double as retry.
 - `reset()` runs on panel appearance so a stale result doesn't linger as the label.

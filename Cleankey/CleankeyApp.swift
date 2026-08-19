@@ -280,8 +280,8 @@ final class UpdateChecker: ObservableObject {
 
     @Published private(set) var state: State = .idle
 
-    private let apiURL = URL(string: "https://api.github.com/repos/seafyre/Cleankey/releases/latest")!
-    private static let releasesURL = URL(string: "https://github.com/seafyre/Cleankey/releases/latest")!
+    private let apiURL = URL(string: "https://api.github.com/repos/kcin1107/Cleankey/releases/latest")!
+    private static let releasesURL = URL(string: "https://github.com/kcin1107/Cleankey/releases/latest")!
 
     var title: String {
         switch state {
