@@ -1,7 +1,7 @@
 name: Release
 
-# Tagging v* builds, signs, notarizes and publishes the app. The same five steps
-# that are documented for local releases in STRUCTURE.md, so the two stay in sync.
+# Tagging v* builds, signs, notarizes and publishes the app. Mirrors the five-step
+# local release procedure in STRUCTURE.md, a maintainer note kept outside the repo.
 # A v* tag builds and publishes. A manual run does everything except publish,
 # so the signing and notarization path can be rehearsed without shipping.
 on:
