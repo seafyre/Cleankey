@@ -78,6 +78,14 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 6. Commit Hygiene
+
+**No AI attribution in commit messages.**
+
+- Never add a `Co-Authored-By:` trailer for Claude, Anthropic, or any other assistant.
+- GitHub reads co-author trailers as repository contributors. One such commit puts "Claude" back in the Contributors list, and removing it later means rewriting history and force-pushing.
+- A local `commit-msg` hook strips these lines as a backstop. It is not versioned, so don't rely on it - don't write the trailer in the first place.
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
