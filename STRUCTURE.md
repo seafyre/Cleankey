@@ -20,8 +20,8 @@ Cleankey/
 ├── .claude/                    (gitignored)
 ├── .git/
 ├── .gitignore
-├── AGENTS.md
-├── CLAUDE.md
+├── AGENTS.md                   (gitignored)
+├── CLAUDE.md                   (gitignored)
 ├── README.md
 ├── STRUCTURE.md
 ├── CleankeyDemo.gif
@@ -38,7 +38,7 @@ Cleankey/
 
 ### Key Files
 
-- `AGENTS.md` / `CLAUDE.md`: project instructions for AI coding assistants. Kept byte-identical apart from the title line; edit both together.
+- `AGENTS.md` / `CLAUDE.md`: project instructions for AI coding assistants. Untracked and gitignored, so they exist only in a local working copy, not in a fresh clone. Kept byte-identical apart from the title line; edit both together.
 - `README.md`: Project overview and user-facing documentation.
 - `STRUCTURE.md`: This file: repository structure and app architecture reference.
 - `CleankeyDemo.gif`: Demo animation embedded in the README.

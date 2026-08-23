@@ -1,4 +1,6 @@
 .claude/
+AGENTS.md
+CLAUDE.md
 Releases/
 *.xcarchive/
 DerivedData/
